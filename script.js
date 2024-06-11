@@ -26,7 +26,7 @@ const questions = [
             {  text:  "Shri Lanka", correct: false},
         ]
     },
-    {
+     {
         question: "Which country is known for the Eiffel Tower?",
         answer: [
             { text: "Italy", correct: false },
@@ -183,6 +183,7 @@ const questions = [
 
 
 const  questionElement =  document.getElementById("question");
+const quizInfo = document.querySelector(".info");
 const  answerButtons =  document.getElementById("answer-buttons");
 const  nextButton =  document.getElementById("next-btn");
 
@@ -198,7 +199,7 @@ function  startQuiz(){
 }
 
 function showQuestion(){
-    resetState()
+    resetState();
     let  currentQuestion = questions[currentQuestionIndex]
     let  questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". "  + currentQuestion.question;
@@ -243,6 +244,7 @@ function selectAnswer(e){
 
 function showScore(){
     resetState();
+    quizInfo.remove(".info");
    /*  questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = "block"; */
